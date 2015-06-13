@@ -1,6 +1,7 @@
 class QuotesController < ApplicationController
 	def index
 		@quote = Quote.order("RANDOM()").first
+		@characters = ['Andy Bernard', 'Angela Martin', 'Clark Green', 'Creed Bratton', 'Darryl Philbin', 'David Wallace', 'Dwight Schrute', 'Erin Hannon',' Gabe Lewis', 'Holly Flax', 'Jan Levinson', 'Jim Halpert', 'Karen Filippelli', 'Kelly Kapoor', 'Kevin Malone', 'Meredith Palmer', 'Michael Scott', 'Nellie Bertram', 'Oscar Martinez', 'Pam Beesly', 'Pete Miller', 'Phyllis Lapin', 'Robert California', 'Roy Anderson', 'Ryan Howard', 'Stanley Hudson', 'Toby Flenderson']
 	end
 
 	def create
@@ -14,9 +15,11 @@ class QuotesController < ApplicationController
 	def about
 	end
 
+
 	private
 
 	def quote_params
 		params.require(:quote).permit(:saying, :author)
 	end
+
 end

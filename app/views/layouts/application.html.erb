@@ -38,13 +38,13 @@
 	    <div class="modal-content">
 	      	<div class="modal-header">
 	        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        	<h4 class="modal-title" id="myModalLabel">Contribute Your Quote</h4>
+	        	<h4 class="modal-title" id="myModalLabel">Contribute Your Quote from The Office</h4>
 	      	</div>
 	      	<%= simple_form_for Quote.new do |f| %>
 	      		<div class="modal-body">
-					<%= f.input :saying, :label => "What quote do you want to add?", :placeholder => "Bears eat beets. Bears. Beets. Battlestar Galactica." %>
+					<%= f.input :saying, :label => "What quote do you want to add?", :hint => "Ex. Bears eat beets. Bears. Beets. Battlestar Galactica." %>
 					<br />
-					<%= f.input :author, :label => "Who said this quote?", :placeholder => "Jim Halpert" %>
+					<%= f.input :author, collection: @characters, :label => "Who said this quote?", :hint => "Ex. Jim Halpert" %>
 		  		</div>
 		     	<div class="modal-footer">
 		        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
