@@ -9,10 +9,14 @@ class QuotesController < ApplicationController
 	    if @quote.invalid?
 	      flash[:error] = '<strong>Could not save</strong> the data you entered is invalid.'
 	    end
-		redirect_to quotes_path
+		redirect_to thanks_path
 	end
 
 	def about
+	end
+
+	def thanks
+		@quote = Quote.last
 	end
 
 
