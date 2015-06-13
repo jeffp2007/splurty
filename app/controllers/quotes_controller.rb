@@ -16,7 +16,7 @@ class QuotesController < ApplicationController
 	end
 
 	def thanks
-		@quote = Quote.last
+		@added_quote = Quote.last
 	end
 
 
